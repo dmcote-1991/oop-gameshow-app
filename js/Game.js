@@ -14,4 +14,12 @@ class Game {
         ];
         this.activePhrase = null;
     }
+    /**
+     * Selects random phrase from phrases property
+     * @return {object} Phrase object chosen to be used
+     */
+    getRandomPhrase(){
+        const randomIndex = Math.floor(Math.random() * this.phrases.length);
+        return this.phrases[randomIndex];
+    };
 }

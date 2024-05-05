@@ -22,4 +22,13 @@ class Game {
         const randomIndex = Math.floor(Math.random() * this.phrases.length);
         return this.phrases[randomIndex];
     };
+    /**
+    * Begins game by selecting a random phrase and displaying it to user
+    */
+    startGame(){
+        const overlay = document.getElementById(`overlay`);
+        overlay.style.display = `none`;
+        this.activePhrase = this.getRandomPhrase();
+        this.activePhrase.addPhraseToDisplay();
+    };
 }

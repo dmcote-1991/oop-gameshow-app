@@ -1,7 +1,3 @@
-/* Treehouse FSJS Techdegree
- * Project 4 - OOP Game App
- * Game.js */
-
 class Game {
     constructor() {
         this.missed = 0;
@@ -16,8 +12,8 @@ class Game {
     }
 
     /**
-     * Selects random phrase from phrases property
-     * @return {object} Phrase object chosen to be used
+     * Selects random phrase from the list of phrases
+     * @return {object} Returns a Phrase object randomly chosen to be used
      */
     getRandomPhrase(){
         const randomIndex = Math.floor(Math.random() * this.phrases.length);
@@ -25,7 +21,7 @@ class Game {
     };
 
     /**
-    * Begins game by selecting a random phrase and displaying it to user
+    * Initiates the game by selecting a random phrase and displaying it on the screen.
     */
     startGame(){
         const overlay = document.getElementById(`overlay`);
@@ -35,9 +31,8 @@ class Game {
     };
 
     /**
-    * Increases the value of the missed property
-    * Removes a life from the scoreboard
-    * Checks if player has remaining lives and ends game if player is out
+    * Removes a heart and increases the missed property value by 1 for each wrong guess.
+    * Displays the losing game-over message when the player runs out of hearts.
     */
     removeLife() {
         const hearts = document.querySelectorAll('.tries img');
@@ -49,8 +44,8 @@ class Game {
     };
 
     /**
-    * Checks for winning move
-    * @return {boolean} True if game has been won, false if game wasn't
+    * Checks if the game has been won by revealing all letters in the phrase.
+    * @return {boolean} True if player wins, false if they lose.
     won
     */
     checkForWin() {
@@ -59,8 +54,8 @@ class Game {
     };
 
     /**
-    * Displays game over message
-    * @param {boolean} gameWon - Whether or not the user won the game
+    * Displays the game over message based on the game outcome.
+    * @param {boolean} gameWon - True if player wins, false if they lose.
     */
     gameOver(win) {
         const overlay = document.getElementById('overlay');
@@ -78,8 +73,8 @@ class Game {
     };
 
     /**
-    * Handles onscreen keyboard button clicks
-    * @param (HTMLButtonElement) button - The clicked button element
+    * Handles the interaction when an onscreen keyboard button is clicked.
+    * @param (HTMLButtonElement) button - The clicked button element representing the selected letter.
     */
     handleInteraction(button) {
         button.disabled = true;
@@ -94,6 +89,5 @@ class Game {
                 this.gameOver(true);
             }
         }
-        console.log(button);
     };
 }

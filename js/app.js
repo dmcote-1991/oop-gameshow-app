@@ -1,17 +1,14 @@
-/* Treehouse FSJS Techdegree
- * Project 4 - OOP Game App
- * app.js */
-
 const btnReset = document.getElementById(`btn__reset`);
+const keyboardButtons = document.querySelectorAll('.key');
 let game;
 
 /**
- * Resets the gameboard between games
+ * Resets the gameboard between games when the Start Game button is clicked.
  */
 btnReset.addEventListener(`click`, () => {
     const phraseUl = document.querySelector('#phrase ul');
     phraseUl.innerHTML = ``;
-    const keyboardButtons = document.querySelectorAll('.key');
+
     keyboardButtons.forEach(button => {
         button.disabled = false;
         button.classList.remove('chosen', 'wrong');
@@ -26,12 +23,27 @@ btnReset.addEventListener(`click`, () => {
 });
 
 /**
- * Gives functionality to the keyboard
+ * Gives click functionality to the on-screen keyboard.
  */
 const keyboard = document.getElementById('qwerty');
 keyboard.addEventListener('click', (e) => {
     if (e.target.classList.contains('key')) {
-        const letter = e.target;
-        game.handleInteraction(letter);
+        const clickedLetter = e.target;
+        game.handleInteraction(clickedLetter);
     }
 });
+
+/**
+ * Gives keyboard functionality to the on-screen keyboard.
+ */
+keyboardButtons.forEach(key => {
+    key.addEventListener('click', () => {
+    });
+  });
+  document.addEventListener('keyup', (e) => {
+    const typedLetter = e.key.toLowerCase();
+    const selectedKey = Array.from(keyboardButtons).find(key => key.textContent === typedLetter);
+    if (selectedKey) {
+      selectedKey.click();
+    }
+  });

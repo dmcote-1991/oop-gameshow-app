@@ -1,14 +1,10 @@
-/* Treehouse FSJS Techdegree
- * Project 4 - OOP Game App
- * Phrase.js */
-
 class Phrase {
     constructor(phrase) {
         this.phrase = phrase.toLowerCase();
     }
 
     /**
-    * Displays phrase on game board
+    * Displays the randomly selected phrase on the game board
     */
     addPhraseToDisplay(){
         const phraseUl = document.querySelector(`#phrase ul`);
@@ -26,16 +22,17 @@ class Phrase {
     };
 
     /**
-    * Checks if passed letter is in phrase
-    * @param (string) letter - Letter to check
+    * Checks if the passed letter is present in the phrase.
+    * @param (string) letter - The letter to check
+    * @return {boolean} Returns true if the letter is found in the phrase, false if not.
     */
     checkLetter(letter) {
         return this.phrase.includes(letter.toLowerCase());
     };
 
     /**
-    * Displays passed letter on screen after a match is found
-    * @param (string) letter - Letter to display
+    * Displays the passed letter on the screen when it matches a letter in the phrase.
+    * @param (string) letter - The letter to display
     */
     showMatchedLetter(letter) {
         const phraseLetters = document.querySelectorAll('.letter');

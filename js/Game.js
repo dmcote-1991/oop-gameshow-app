@@ -35,16 +35,6 @@ class Game {
     };
 
     /**
-    * Checks for winning move
-    * @return {boolean} True if game has been won, false if game wasn't
-    won
-    */
-    checkForWin() {
-        const hiddenLetters = document.querySelectorAll('.hide');
-        return hiddenLetters.length === 0;
-    };
-
-    /**
     * Increases the value of the missed property
     * Removes a life from the scoreboard
     * Checks if player has remaining lives and ends game if player is out
@@ -56,6 +46,16 @@ class Game {
         if (this.missed === 5) {
             this.gameOver(false);
         }
+    };
+
+    /**
+    * Checks for winning move
+    * @return {boolean} True if game has been won, false if game wasn't
+    won
+    */
+    checkForWin() {
+        const hiddenLetters = document.querySelectorAll('.hide');
+        return hiddenLetters.length === 0;
     };
 
     /**
@@ -71,18 +71,29 @@ class Game {
             overlay.classList.remove('start', 'lose');
             overlay.classList.add('win');
         } else {
-            message.textContent = 'Sorry, better luck next time!';
+            message.textContent = 'Sorry, you lost! Try Again?';
             overlay.classList.remove('start', 'win');
             overlay.classList.add('lose');
         }
     };
 
-    handleInteraction(){
-        Phrase.checkLetter();
-        Phrase.showMatchedLetter();
-        this.checkForWin();
-        this.removeLife();
-        this.gameOver();
-
+    /**
+    * Handles onscreen keyboard button clicks
+    * @param (HTMLButtonElement) button - The clicked button element
+    */
+    handleInteraction(button) {
+        button.disabled = true;
+        const guessedLetter = button.textContent;
+        if(!this.activePhrase.checkLetter(guessedLetter)) {
+            button.classList.add(`wrong`);
+            this.removeLife();
+        } else {
+            button.classList.add(`chosen`);
+            this.activePhrase.showMatchedLetter(guessedLetter);
+            if (this.checkForWin()) {
+                this.gameOver(true);
+            }
+        }
+        console.log(button);
     };
 }

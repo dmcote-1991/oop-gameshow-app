@@ -8,5 +8,12 @@ let game;
 btnReset.addEventListener(`click`, () => {
     game = new Game();
     game.startGame();
-    game.handleInteraction();
+});
+
+const keyboard = document.getElementById('qwerty');
+keyboard.addEventListener('click', (e) => {
+    if (e.target.classList.contains('key')) {
+        const letter = e.target;
+        game.handleInteraction(letter);
+    }
 });

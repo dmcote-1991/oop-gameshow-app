@@ -14,6 +14,7 @@ class Game {
         ];
         this.activePhrase = null;
     }
+
     /**
      * Selects random phrase from phrases property
      * @return {object} Phrase object chosen to be used
@@ -22,6 +23,7 @@ class Game {
         const randomIndex = Math.floor(Math.random() * this.phrases.length);
         return this.phrases[randomIndex];
     };
+
     /**
     * Begins game by selecting a random phrase and displaying it to user
     */
@@ -31,7 +33,21 @@ class Game {
         this.activePhrase = this.getRandomPhrase();
         this.activePhrase.addPhraseToDisplay();
     };
+
+    /**
+    * Checks for winning move
+    * @return {boolean} True if game has been won, false if game wasn't
+    won
+    */
+    checkForWin() {
+        const hiddenLetters = document.querySelectorAll('.hide');
+        return hiddenLetters.length === 0;
+    }
+
+
     handleInteraction(){
-        
+        Phrase.checkLetter();
+        Phrase.showMatchedLetter();
+        this.checkForWin();
     };
 }

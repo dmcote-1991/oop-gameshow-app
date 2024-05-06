@@ -42,12 +42,47 @@ class Game {
     checkForWin() {
         const hiddenLetters = document.querySelectorAll('.hide');
         return hiddenLetters.length === 0;
-    }
+    };
 
+    /**
+    * Increases the value of the missed property
+    * Removes a life from the scoreboard
+    * Checks if player has remaining lives and ends game if player is out
+    */
+    removeLife() {
+        const hearts = document.querySelectorAll('.tries img');
+        hearts[this.missed].src = 'images/lostHeart.png';
+        this.missed++;
+        if (this.missed === 5) {
+            this.gameOver(false);
+        }
+    };
+
+    /**
+    * Displays game over message
+    * @param {boolean} gameWon - Whether or not the user won the game
+    */
+    gameOver(win) {
+        const overlay = document.getElementById('overlay');
+        overlay.style.display = 'flex';
+        const message = document.getElementById('game-over-message');
+        if (win) {
+            message.textContent = 'Congratulations! You win!';
+            overlay.classList.remove('start', 'lose');
+            overlay.classList.add('win');
+        } else {
+            message.textContent = 'Sorry, better luck next time!';
+            overlay.classList.remove('start', 'win');
+            overlay.classList.add('lose');
+        }
+    };
 
     handleInteraction(){
         Phrase.checkLetter();
         Phrase.showMatchedLetter();
         this.checkForWin();
+        this.removeLife();
+        this.gameOver();
+
     };
 }

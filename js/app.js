@@ -8,4 +8,5 @@ let game;
 btnReset.addEventListener(`click`, () => {
     game = new Game();
     game.startGame();
+    game.handleInteraction();
 });

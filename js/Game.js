@@ -31,4 +31,24 @@ class Game {
         this.activePhrase = this.getRandomPhrase();
         this.activePhrase.addPhraseToDisplay();
     };
+    handleInteraction(){
+        const keys = document.getElementsByClassName(`key`);
+        const keyArray = [];
+        for (let i = 0; i < keys.length; i++) {
+            keyArray.push(keys[i]);
+        }
+        keyArray.forEach((button) => {
+            button.addEventListener(`click`, (e) => {
+                console.log('Button clicked:', e.target.textContent);
+
+                e.target.disabled = true;
+                const guessedLetter = e.target.textContent;
+                if (this.activePhrase.phrase.includes(guessedLetter)) {
+                    e.target.classList.add(`chosen`);
+                } else {
+                    e.target.classList.add(`wrong`);
+                }
+            });
+        });
+    };
 }

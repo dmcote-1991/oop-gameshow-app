@@ -45,5 +45,6 @@ keyboardButtons.forEach(key => {
     const selectedKey = Array.from(keyboardButtons).find(key => key.textContent === typedLetter);
     if (selectedKey) {
       selectedKey.click();
+      game.handleInteraction(typedLetter);
     }
   });

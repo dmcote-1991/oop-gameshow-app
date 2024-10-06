@@ -131,3 +131,6 @@ dist
 
 # DS Store (MacOs)
 .DS_Store
+
+# Exclude Visual Studio Code settings
+.vscode/

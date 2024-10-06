@@ -1,4 +1,4 @@
-class Phrase {
+export class Phrase {
     constructor(phrase) {
         this.phrase = phrase.toLowerCase();
     }

@@ -1,3 +1,6 @@
+import { Game } from './Game.js';
+import { Phrase } from './Phrase.js';
+
 const btnReset = document.getElementById(`btn__reset`);
 const keyboardButtons = document.querySelectorAll('.key');
 let game;
@@ -14,10 +17,12 @@ btnReset.addEventListener(`click`, () => {
         button.classList.remove('chosen', 'wrong');
         button.classList.add('key'); 
     });
+
     const hearts = document.querySelectorAll('.tries img');
     hearts.forEach(heart => {
         heart.src = 'images/liveHeart.png';
     });
+
     game = new Game();
     game.startGame();
 });
@@ -36,10 +41,6 @@ keyboard.addEventListener('click', (e) => {
 /**
  * Gives keyboard functionality to the on-screen keyboard.
  */
-keyboardButtons.forEach(key => {
-    key.addEventListener('click', () => {
-    });
-  });
   document.addEventListener('keyup', (e) => {
     const typedLetter = e.key.toLowerCase();
     const selectedKey = Array.from(keyboardButtons).find(key => key.textContent === typedLetter);
@@ -47,3 +48,4 @@ keyboardButtons.forEach(key => {
       selectedKey.click();
     }
   });
+  

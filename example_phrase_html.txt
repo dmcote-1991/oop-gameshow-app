@@ -1,3 +1,18 @@
+<!-- 
+  example_phrase_html.txt
+  
+  This file contains an HTML snippet representing a phrase broken down into individual letters.
+  It serves as placeholder content to demonstrate what the rendered output of a phrase would look like
+  in the Phrase Hunter game. 
+
+  The structure mimics the game's UI for testing and development purposes, allowing developers and testers 
+  to visualize the layout without running the actual game.
+
+  To use this example:
+  - You can copy and paste the contents into the game board to see how the phrase would be displayed.
+  - Modify the letters as needed to test different phrases or layouts.
+-->
+
 <div id="phrase" class="section">
     <ul>
         <li class="hide letter h">h</li>

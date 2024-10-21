@@ -23,18 +23,22 @@ Phrase Hunter is a word guessing game where players must figure out the hidden p
 
 ```bash
 /oop-gameshow-app
-├── index.html         # Main HTML file
+├── index.html   
 ├── css
-│   ├── animate.css    # CSS animation styles
-│   └── styles.css     # Main CSS styles
+│   ├── animate.css   
+│   └── styles.css    
 ├── images
 │   ├── liveHeart.png  # Heart life icon
 │   └── lostHeart.png  # Empty heart life icon
-├── js
-│   ├── app.js         # Main entry point for the game logic
-│   ├── Game.js        # Contains the game mechanics and logic
-│   └── Phrase.js      # Handles the phrase management and display
-├── README.md          # Project documentation
+├── dist   #Compiled JavaScript files
+│   ├── app.js      
+│   ├── Game.js       
+│   └── Phrase.js      
+├── src
+│   ├── app.ts         # Main entry point for the game logic
+│   ├── Game.ts        # Contains the game mechanics and logic
+│   └── Phrase.ts      # Handles the phrase management and display
+├── README.md     
 └── .gitignore
 ```
 

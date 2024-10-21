@@ -1,15 +1,14 @@
 import { Game } from './Game.js';
-import { Phrase } from './Phrase.js';
 
-const btnReset = document.getElementById(`btn__reset`);
-const keyboardButtons = document.querySelectorAll('.key');
-let game;
+const btnReset = document.getElementById(`btn__reset`) as HTMLButtonElement;
+const keyboardButtons = document.querySelectorAll<HTMLButtonElement>('.key');
+let game: Game;
 
 /**
  * Resets the gameboard between games when the Start Game button is clicked.
  */
 btnReset.addEventListener(`click`, () => {
-    const phraseUl = document.querySelector('#phrase ul');
+    const phraseUl = document.querySelector('#phrase ul') as HTMLUListElement;
     phraseUl.innerHTML = ``;
 
     keyboardButtons.forEach(button => {
@@ -18,7 +17,7 @@ btnReset.addEventListener(`click`, () => {
         button.classList.add('key'); 
     });
 
-    const hearts = document.querySelectorAll('.tries img');
+    const hearts = document.querySelectorAll<HTMLImageElement>('.tries img');
     hearts.forEach(heart => {
         heart.src = 'images/liveHeart.png';
     });
@@ -30,10 +29,11 @@ btnReset.addEventListener(`click`, () => {
 /**
  * Gives click functionality to the on-screen keyboard.
  */
-const keyboard = document.getElementById('qwerty');
-keyboard.addEventListener('click', (e) => {
-    if (e.target.classList.contains('key')) {
-        const clickedLetter = e.target;
+const keyboard = document.getElementById('qwerty') as HTMLDivElement;
+keyboard.addEventListener('click', (e: MouseEvent) => {
+    const target = e.target as HTMLElement;
+    if (target.classList.contains('key')) {
+        const clickedLetter = e.target as HTMLButtonElement;
         game.handleInteraction(clickedLetter);
     }
 });

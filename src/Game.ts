@@ -1,6 +1,10 @@
 import { Phrase } from './Phrase.js'
 
 export class Game {
+    missed: number;
+    phrases: Phrase[];
+    activePhrase: Phrase | null;
+
     constructor() {
         this.missed = 0;
         this.phrases = [
@@ -15,9 +19,9 @@ export class Game {
 
     /**
      * Selects random phrase from the list of phrases
-     * @return {object} Returns a Phrase object randomly chosen to be used
+     * @return {Phrase} Returns a Phrase object randomly chosen to be used
      */
-    getRandomPhrase(){
+    getRandomPhrase(): Phrase {
         const randomIndex = Math.floor(Math.random() * this.phrases.length);
         return this.phrases[randomIndex];
     };
@@ -25,8 +29,8 @@ export class Game {
     /**
     * Initiates the game by selecting a random phrase and displaying it on the screen.
     */
-    startGame(){
-        const overlay = document.getElementById(`overlay`);
+    startGame(): void{
+        const overlay = document.getElementById(`overlay`) as HTMLDivElement;
         overlay.style.display = `none`;
         this.activePhrase = this.getRandomPhrase();
         this.activePhrase.addPhraseToDisplay();
@@ -36,8 +40,8 @@ export class Game {
     * Removes a heart and increases the missed property value by 1 for each wrong guess.
     * Displays the losing game-over message when the player runs out of hearts.
     */
-    removeLife() {
-        const hearts = document.querySelectorAll('.tries img');
+    removeLife(): void {
+        const hearts = document.querySelectorAll<HTMLImageElement>('.tries img');
         hearts[this.missed].src = 'images/lostHeart.png';
         this.missed++;
         if (this.missed === 5) {
@@ -50,19 +54,19 @@ export class Game {
     * @return {boolean} True if player wins, false if they lose.
     won
     */
-    checkForWin() {
+    checkForWin(): boolean {
         const hiddenLetters = document.querySelectorAll('.hide');
         return hiddenLetters.length === 0;
     };
 
     /**
     * Displays the game over message based on the game outcome.
-    * @param {boolean} gameWon - True if player wins, false if they lose.
+    * @param {boolean} win - True if player wins, false if they lose.
     */
-    gameOver(win) {
-        const overlay = document.getElementById('overlay');
+    gameOver(win: boolean): void {
+        const overlay = document.getElementById('overlay') as HTMLDivElement;
         overlay.style.display = 'flex';
-        const message = document.getElementById('game-over-message');
+        const message = document.getElementById('game-over-message')as HTMLHeadingElement;
         if (win) {
             message.textContent = 'Congratulations! You win!';
             overlay.classList.remove('start', 'lose');
@@ -76,17 +80,17 @@ export class Game {
 
     /**
     * Handles the interaction when an onscreen keyboard button is clicked.
-    * @param (HTMLButtonElement) button - The clicked button element representing the selected letter.
+    * @param {HTMLButtonElement} button - The clicked button element representing the selected letter.
     */
-    handleInteraction(button) {
+    handleInteraction(button: HTMLButtonElement): void {
         button.disabled = true;
-        const guessedLetter = button.textContent;
-        if(!this.activePhrase.checkLetter(guessedLetter)) {
+        const guessedLetter = button.textContent || '';
+        if(!this.activePhrase?.checkLetter(guessedLetter)) {
             button.classList.add(`wrong`);
             this.removeLife();
         } else {
             button.classList.add(`chosen`);
-            this.activePhrase.showMatchedLetter(guessedLetter);
+            this.activePhrase?.showMatchedLetter(guessedLetter);
             if (this.checkForWin()) {
                 this.gameOver(true);
             }

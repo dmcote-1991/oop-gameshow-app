@@ -1,16 +1,23 @@
+import { GameStructure } from './GameStructure.js';
 import { Game } from './Game.js';
 
 class App {
+    private gameStructure: GameStructure
     private btnReset: HTMLButtonElement;
     private keyboardButtons: NodeListOf<HTMLButtonElement>;
     private keyboard: HTMLDivElement;
     private game: Game | null;
 
     constructor() {
+        // Initialize the GameStructure with the container where the game HTML should be injected
+        this.gameStructure = new GameStructure('game-container');
+
+        // Now find elements after the GameStructure has injected the HTML
         this.btnReset = document.getElementById('btn__reset') as HTMLButtonElement;
         this.keyboardButtons = document.querySelectorAll<HTMLButtonElement>('.key');
         this.keyboard = document.getElementById('qwerty') as HTMLDivElement;
         this.game = null;
+
         this.initializeEventListeners();
     }
 

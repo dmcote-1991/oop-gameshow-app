@@ -31,13 +31,15 @@ Phrase Hunter is a word guessing game where players must figure out the hidden p
 │   ├── liveHeart.png  # Heart life icon
 │   └── lostHeart.png  # Empty heart life icon
 ├── dist   #Compiled JavaScript files
-│   ├── app.js      
+│   ├── app.js    
+│   ├── GameStructure.js     
 │   ├── Game.js       
 │   └── Phrase.js      
 ├── src
-│   ├── app.ts         # Main entry point for the game logic
-│   ├── Game.ts        # Contains the game mechanics and logic
-│   └── Phrase.ts      # Handles the phrase management and display
+│   ├── app.ts            # Main entry point for the game logic
+│   ├── GameStructure.ts  # Contains the main game structure HTML
+│   ├── Game.ts           # Contains the game mechanics and logic
+│   └── Phrase.ts         # Handles the phrase management and display
 ├── README.md     
 └── .gitignore
 ```

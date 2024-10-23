@@ -61,7 +61,11 @@ Phrase Hunter is a word guessing game where players must figure out the hidden p
 
 2. Navigate into the project directory:
    ```bash
-   cd phrase-hunter
+   cd oop-gameshow-app
+
+3. Compile the TypeScript files:
+   ```bash
+   tsc
 
 3. Open the `index.html` file in your browser to start the game.
 
@@ -75,8 +79,7 @@ Phrase Hunter is a word guessing game where players must figure out the hidden p
 
 - **HTML5**: For the structure of the game.
 - **CSS3**: For the visual styling and layout.
-- **JavaScript**: (ES6 Modules): For the game logic and interactions.
-- **Animate.css**: For animations (optional).
+- **TypeScript**: (ES6 Modules): For the game logic and interactions.
 
 ## Contributing
 

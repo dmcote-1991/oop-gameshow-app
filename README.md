@@ -77,9 +77,9 @@ Phrase Hunter is a word guessing game where players must figure out the hidden p
 
 ## Technologies Used
 
+- **TypeScript**: (ES6 Modules): For the game logic and interactions.
 - **HTML5**: For the structure of the game.
 - **CSS3**: For the visual styling and layout.
-- **TypeScript**: (ES6 Modules): For the game logic and interactions.
 
 ## Contributing
 

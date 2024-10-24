@@ -1,15 +1,47 @@
+/**
+ * GameStructure Class for the Phrase Hunter Game
+ * 
+ * This module defines the GameStructure class, which is responsible for 
+ * injecting the HTML layout of the Phrase Hunter game into a specified 
+ * container element in the DOM. It sets up the visual components of the 
+ * game interface, including the overlay, game banner, phrase display, 
+ * on-screen keyboard, and scoreboard.
+ * 
+ * Key Features:
+ * - Initializes with a container ID to specify where the game structure 
+ *   will be injected.
+ * - Automatically injects the complete HTML structure of the game 
+ *   upon creation of the GameStructure instance.
+ * - Ensures that the HTML is only injected if the target container 
+ *   element exists in the DOM, promoting robustness.
+ * 
+ * Usage:
+ * To use this class, create an instance of GameStructure by passing 
+ * the ID of the desired container element. The game structure will 
+ * be injected into that element immediately upon instantiation.
+ */
+
 export class GameStructure {
+  // Property to store the ID of the container where the game HTML will be injected
   private containerId: string;
 
   constructor(containerId: string) {
     this.containerId = containerId;
+    // Inject the game structure into the specified container element when the object is created
     this.injectGameHTML();
   }
 
+  /**
+   * Injects the HTML structure of the game into the specified container element.
+   * This includes the overlay, game banner, phrase display area, on-screen keyboard, and scoreboard.
+   */  
   injectGameHTML(): void {
+    // Find the container element using the provided container ID
     const gameContainer = document.getElementById(this.containerId);
 
+    // Check if the container element exists before injecting the HTML
     if (gameContainer) {
+      // Set the innerHTML of the container to the complete game layout
       gameContainer.innerHTML = `
         <div id="overlay" class="start">
           <h2 class="title">Phrase Hunter</h2>

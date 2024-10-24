@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&Roboto:300');
 
 /* Variables */
-
 :root {
+  /* Colors */
   --color-win: #78CF82;
   --color-lose: #D94545;
   --color-start: #5b85b7;
@@ -11,13 +11,16 @@
   --color-neutral-light: #D2D2D2;
   --color-keys: #37474F;
   --color-keys-light: #E5E5E5;
+
+  /* Fonts */
   --font-size-large: 60px;
   --font-size-medium: 20px;
+
+  /* Transitions */
   --transition: all .2s ease-in-out;
 }
 
-/* main */
-
+/* Main styles */
 * {
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
@@ -25,9 +28,9 @@
 
 body {
   justify-content: space-evenly;
-  flex-direction: column;
+  flex-direction: column; /* Vertical layout */
   display: flex;
-  height: 100vh;
+  height: 100vh; /* Full viewpoint height */
 }
 
 li, ol, ul {
@@ -37,9 +40,8 @@ li, ol, ul {
 
 h2 {
   margin: 0;
-  text-transform: uppercase;
-  font-size: var(--font-size-large);
-  margin: 0;
+  text-transform: uppercase; /* Capitalize all text */
+  font-size: var(--font-size-large); /* Use large font size */
 }
 
 h1 {
@@ -50,13 +52,11 @@ button {
   margin: 6px;
   border: 1px solid transparent;
   padding: .5rem 1rem;
-  color: var(--color-keys);
-  font-size: var(--font-size-medium);
-  background-color: var(--color-keys-light);
-  border-radius: 5px;
-  -webkit-transition: var(--transition);
-  -o-transition: var(--transition);
-  transition: var(--transition);
+  color: var(--color-keys); /* Text color */
+  font-size: var(--font-size-medium); /* Use medium font size */
+  background-color: var(--color-keys-light); /* Button background color */
+  border-radius: 5px; /* Rounded corners */
+  transition: var(--transition); /* Smooth hover/active effects */
   cursor: pointer;
 }
 
@@ -68,9 +68,9 @@ button {
 .game-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  height: 100%;
-  max-height: 900px;
+  justify-content: space-around; /* Distribute space evenly */
+  height: 100%; /* Full container height */
+  max-height: 900px; /* Limit max height */
   text-align: center;
 }
 
@@ -84,64 +84,57 @@ button {
 }
 
 /* Title */
-
 .header {
-  color: #3a3f58;
+  color: #3a3f58; /* Darker shade for title */
 }
 
-
 /* Phrase */
-
 .letter {
-  font-size: var(--font-size-medium);
+  font-size: var(--font-size-medium); /* Medium font size for letters */
   height: 65px;
   width: 65px;
   padding: 20px 1px 0 1px;
   margin-right: 2px;
-  color: transparent;
-  background: var(--color-neutral-light);
+  color: transparent; /* Hide letter until revealed */
+  background: var(--color-neutral-light); /* Neutral background color */
   border-radius: 5px;
 }
 
 .space {
-  width: 15px;
+  width: 15px; /* Space between letters */
 }
 
-
-
 .show {
-  color: #fff;
-  background-color: #4ac0d5;
+  color: #fff; /* White text color when revealed */
+  background-color: #4ac0d5; /* Background color for revealed letters */
   font-size: 20px;
   height: 65px;
   width: 65px;
   padding: 20px 1px 0 1px;
   margin-right: 2px;
   border-radius: 5px;
-  -webkit-animation-duration: .5s;
-  animation-duration: .5s;
+  animation-duration: .5s; /* Animation duration for letter reveal */
 }
 
-
-/* Keyboard */
-
+/* Keyboard  setup */
 .keyrow {
-  display: flex;
-  justify-content: center;
+  display: flex; /* Arrange keys in rows */
+  justify-content: center; /* Center the rows */
 }
 
 .chosen {
-  background: #3a3f58;
+  background: #3a3f58; /* Dark background for selected keys */
   border-radius: 5px;
-  font-size: var(--font-size-medium);
+  font-size: var(--font-size-medium); /* Medium font size */
   color: #FFFFFF;
 }
 
 .wrong {
-  background: #bb3838;
+  background: #bb3838; /* Red background color for incorrect guesses */
   color: #FFFFFF;
 }
 
+/* Reset button styling */
 .btn__reset {
   padding: 16px;
   margin: 50px auto;
@@ -159,15 +152,13 @@ button {
   border-right: solid 3px rgba(0, 0, 0, 0);
 }
 
-
-/* Overlay */
-
+/* Overlay styles */
 #overlay {
   display: flex;
   flex-direction: column;
-  position: fixed;
+  position: fixed; /* Fixed position covering the entire viewport */
   color: #FFFFFF;
-  justify-content: center;
+  justify-content: center; /* Center content vertically */
   top: 0;
   bottom: 0;
   left: 0;
@@ -179,26 +170,29 @@ button {
   color: #FFF;
 }
 
+/* Start state styling */
 .start {
-  background-color: #3a3f58;
+  background-color: #3a3f58; /* Dark background for start screen */
 }
 
 .start a {
-  color: #fff;
+  color: #fff; /* White link on start screen */
 }
 
+/* Win state styling */
 .win {
-  background-color: var(--color-win);
+  background-color: var(--color-win); /* Green background for win screen */
 }
 
 .win a {
-  color: var(--color-win);
+  color: var(--color-win); /* Matching link color for win state */
 }
 
+/* Lose state styling */
 .lose {
-  background-color: #bb3838;
+  background-color: #bb3838; /* Red background for lose screen */
 }
 
 .lose a {
-  color: var(--color-lose);
+  color: var(--color-lose); /* Red link color for lose state */
 }

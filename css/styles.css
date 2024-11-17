@@ -106,7 +106,7 @@ button {
 
 .show {
   color: #fff; /* White text color when revealed */
-  background-color: #4ac0d5; /* Background color for revealed letters */
+  background-color: #78CF82; /* Background color for revealed letters */
   font-size: 20px;
   height: 65px;
   width: 65px;
@@ -123,14 +123,14 @@ button {
 }
 
 .chosen {
-  background: #3a3f58; /* Dark background for selected keys */
+  background: #5b85b7; /* Dark background for selected keys */
   border-radius: 5px;
   font-size: var(--font-size-medium); /* Medium font size */
   color: #FFFFFF;
 }
 
 .wrong {
-  background: #bb3838; /* Red background color for incorrect guesses */
+  background: #D94545; /* Red background color for incorrect guesses */
   color: #FFFFFF;
 }
 

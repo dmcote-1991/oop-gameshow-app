@@ -13,7 +13,10 @@
   </head>
 
   <body>
-    <div id="game-container" class="game-container"></div>
+    <div id="game-container" class="game-container" role="main" aria-labelledby="game-title">
+      <!-- Screen reader title -->
+      <h1 id="game-title" class="visually-hidden">Phrase Hunter Game</h1>
+    </div>
   </body>
 
   <script type="module" src="dist/app.js"></script>

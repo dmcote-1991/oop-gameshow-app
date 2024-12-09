@@ -20,6 +20,17 @@
   --transition: all .2s ease-in-out;
 }
 
+/* Visually hidden class for screen reader-only content */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 /* Main styles */
 * {
   box-sizing: border-box;

@@ -43,58 +43,58 @@ export class GameStructure {
     if (gameContainer) {
       // Set the innerHTML of the container to the complete game layout
       gameContainer.innerHTML = `
-        <div id="overlay" class="start">
-          <h2 class="title">Phrase Hunter</h2>
+        <div id="overlay" class="start" role="dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description">
+          <h2 id ="dialog-title" class="title">Phrase Hunter</h2>          
           <h1 id="game-over-message"></h1>
-          <button id="btn__reset">Start Game</button>
+          <button id="btn__reset" aria-label="Start Game">Start Game</button>
         </div>
 
-        <div id="banner" class="section">
+        <div id="banner" class="section" aria-hidden="true">
           <h2 class="header">Phrase Hunter</h2>
         </div>
 
-        <div id="phrase" class="section">
+        <div id="phrase" class="section" aria-label="Phrase Display">
           <ul></ul>
         </div>
 
-        <div id="qwerty" class="section">
+        <div id="qwerty" class="section" aria-label="Keyboard">
           <div class="keyrow">
-            <button class="key">q</button>
-            <button class="key">w</button>
-            <button class="key">e</button>
-            <button class="key">r</button>
-            <button class="key">t</button>
-            <button class="key">y</button>
-            <button class="key">u</button>
-            <button class="key">i</button>
-            <button class="key">o</button>
-            <button class="key">p</button>
+            <button class="key" aria-label="Letter Q">q</button>
+            <button class="key" aria-label="Letter W">w</button>
+            <button class="key" aria-label="Letter E">e</button>
+            <button class="key" aria-label="Letter R">r</button>
+            <button class="key" aria-label="Letter T">t</button>
+            <button class="key" aria-label="Letter Y">y</button>
+            <button class="key" aria-label="Letter U">u</button>
+            <button class="key" aria-label="Letter I">i</button>
+            <button class="key" aria-label="Letter O">o</button>
+            <button class="key" aria-label="Letter P">p</button>
           </div>
 
           <div class="keyrow">
-            <button class="key">a</button>
-            <button class="key">s</button>
-            <button class="key">d</button>
-            <button class="key">f</button>
-            <button class="key">g</button>
-            <button class="key">h</button>
-            <button class="key">j</button>
-            <button class="key">k</button>
-            <button class="key">l</button>
+            <button class="key" aria-label="Letter A">a</button>
+            <button class="key" aria-label="Letter S">s</button>
+            <button class="key" aria-label="Letter D">d</button>
+            <button class="key" aria-label="Letter F">f</button>
+            <button class="key" aria-label="Letter G">g</button>
+            <button class="key" aria-label="Letter H">h</button>
+            <button class="key" aria-label="Letter J">j</button>
+            <button class="key" aria-label="Letter K">k</button>
+            <button class="key" aria-label="Letter L">l</button>
           </div>
 
           <div class="keyrow">
-            <button class="key">z</button>
-            <button class="key">x</button>
-            <button class="key">c</button>
-            <button class="key">v</button>
-            <button class="key">b</button>
-            <button class="key">n</button>
-            <button class="key">m</button>
+            <button class="key" aria-label="Letter Z">z</button>
+            <button class="key" aria-label="Letter X">x</button>
+            <button class="key" aria-label="Letter C">c</button>
+            <button class="key" aria-label="Letter V">v</button>
+            <button class="key" aria-label="Letter B">b</button>
+            <button class="key" aria-label="Letter N">n</button>
+            <button class="key" aria-label="Letter M">m</button>
           </div>
         </div>
 
-        <div id="scoreboard" class="section">
+        <div id="scoreboard" class="section" aria-label="Scoreboard">
           <ol>
             <li class="tries">
               <img

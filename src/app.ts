@@ -48,6 +48,7 @@ class App {
         this.btnReset.addEventListener('click', this.resetGame.bind(this));
         this.keyboard.addEventListener('click', this.handleKeyboardClick.bind(this));
         document.addEventListener('keyup', this.handleKeyboardInput.bind(this)); // Handle physical keyboard input
+        document.addEventListener('keydown', this.handleEnterKey.bind(this)); // Handle Enter key press
     }
 
     /**
@@ -98,6 +99,15 @@ class App {
         const selectedKey = Array.from(this.keyboardButtons).find(key => key.textContent === typedLetter);
         if (selectedKey) {
             selectedKey.click(); // Trigger the click event for the corresponding key
+        }
+    }
+
+    /**
+     * Handles Enter key press to start game
+     */
+    private handleEnterKey(e: KeyboardEvent): void {
+        if (e.key === 'Enter') {
+            this.btnReset.click(); // Trigger the Start Game button on Enter key press
         }
     }
 }

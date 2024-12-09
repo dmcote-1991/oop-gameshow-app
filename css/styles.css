@@ -50,14 +50,14 @@ li, ol, ul {
   display: inline-block;
 }
 
+h1 {
+  font-size: 2rem;
+}
+
 h2 {
   margin: 0;
   text-transform: uppercase; /* Capitalize all text */
   font-size: var(--font-size-large); /* Use large font size */
-}
-
-h1 {
-  font-size: 2rem;
 }
 
 button {
@@ -70,6 +70,22 @@ button {
   border-radius: 5px; /* Rounded corners */
   transition: var(--transition); /* Smooth hover/active effects */
   cursor: pointer;
+}
+
+/* Focus styles for interactive elements */
+button:focus,
+a:focus,
+input:focus {
+  outline: 3px solid var(--color-keys); /* Clear and visible outline */
+  outline-offset: 2px; /* Space between element and outline */
+  border: 2px solid var(--color-keys); /* Border for additional focus visibility */
+}
+
+/* Enhanced focus for buttons with transition */
+button:focus {
+  background-color: var(--color-keys); /* Change background color on focus */
+  color: #FFFFFF; /* Ensure text remains readable */
+  box-shadow: 0 0 0 3px rgba(120, 207, 130, 0.6); /* Add a soft glow around buttons */
 }
 
 #btn__reset {
@@ -85,6 +101,13 @@ button {
   max-height: 900px; /* Limit max height */
   text-align: center;
   padding: 10px;
+}
+
+/* Focus styles for letters on the keyboard */
+.letter:focus {
+  background-color: #78CF82; /* Highlight the letter in focus */
+  outline: 3px solid var(--color-keys);
+  outline-offset: 2px;
 }
 
 .section {

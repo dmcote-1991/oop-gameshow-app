@@ -42,6 +42,7 @@ body {
   flex-direction: column; /* Vertical layout */
   display: flex;
   height: 100vh; /* Full viewpoint height */
+  font-size: 1rem;
 }
 
 li, ol, ul {
@@ -56,15 +57,15 @@ h2 {
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 2rem;
 }
 
 button {
   margin: 6px;
   border: 1px solid transparent;
-  padding: .5rem 1rem;
+  padding: 1rem 2rem;
   color: var(--color-keys); /* Text color */
-  font-size: var(--font-size-medium); /* Use medium font size */
+  font-size: 1.4rem;
   background-color: var(--color-keys-light); /* Button background color */
   border-radius: 5px; /* Rounded corners */
   transition: var(--transition); /* Smooth hover/active effects */
@@ -83,6 +84,7 @@ button {
   height: 100%; /* Full container height */
   max-height: 900px; /* Limit max height */
   text-align: center;
+  padding: 10px;
 }
 
 .section {
@@ -131,6 +133,7 @@ button {
 .keyrow {
   display: flex; /* Arrange keys in rows */
   justify-content: center; /* Center the rows */
+  flex-wrap: wrap; /* Allow keys to wrap on smaller screens */
 }
 
 .chosen {
@@ -206,4 +209,48 @@ button {
 
 .lose a {
   color: var(--color-lose); /* Red link color for lose state */
+}
+
+/* Media Queries for Responsiveness */
+
+/* Adjust layout for small screens (mobile-first) */
+@media (max-width: 768px) {
+  body {
+    flex-direction: columns; /* Keep vertical layout for small screens */
+  }
+
+  .game-container {
+    max-height: none; /* Allow the game container to expand on small screens */
+    padding: 10px;
+  }
+
+  .letter {
+    font-size: 1.5 rem; /* Adjust letter size for better visibility on smaller screens */
+    width: 50px;
+    height: 50px;
+  }
+
+  .keyrow {
+    flex-wrap: wrap; /* Allow keyboard keys to wrap to the next line */
+    justify-content: space-between;
+  }
+
+  /* Make buttons larger for easier tap targets */
+  button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+/* Adjust layout for larger screens (tablets/desktops) */
+@media (min-width: 769px) {
+  .game-container {
+    max-height: 900px; /* Max height for larger screens */
+  }
+
+  .letter {
+    font-size: var(--font-size-medium); /* Default font size for letters */
+    width: 65px;
+    height: 65px;
+  }
 }

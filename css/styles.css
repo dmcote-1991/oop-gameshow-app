@@ -4,20 +4,10 @@
 /* Variables */
 :root {
   /* Colors */
-  --color-win: #78CF82;
-  --color-lose: #D94545;
-  --color-start: #5b85b7;
-  --color-neutral: #445069;
-  --color-neutral-light: #D2D2D2;
   --color-keys: #37474F;
-  --color-keys-light: #E5E5E5;
 
   /* Fonts */
-  --font-size-large: 60px;
   --font-size-medium: 20px;
-
-  /* Transitions */
-  --transition: all .2s ease-in-out;
 }
 
 /* Visually hidden class for screen reader-only content */
@@ -57,18 +47,18 @@ h1 {
 h2 {
   margin: 0;
   text-transform: uppercase; /* Capitalize all text */
-  font-size: var(--font-size-large); /* Use large font size */
+  font-size: 60px; /* Use large font size */
 }
 
 button {
   margin: 6px;
   border: 1px solid transparent;
   padding: 1rem 2rem;
-  color: var(--color-keys); /* Text color */
+  color: #000000; /* Text color */
   font-size: 1.4rem;
-  background-color: var(--color-keys-light); /* Button background color */
+  background-color: #E5E5E5; /* Button background color */
   border-radius: 5px; /* Rounded corners */
-  transition: var(--transition); /* Smooth hover/active effects */
+  transition: all .2s ease-in-out; /* Smooth hover/active effects */
   cursor: pointer;
 }
 
@@ -105,7 +95,7 @@ button:focus {
 
 /* Focus styles for letters on the keyboard */
 .letter:focus {
-  background-color: #78CF82; /* Highlight the letter in focus */
+  background-color: #4CAF50; /* Highlight the letter in focus */
   outline: 3px solid var(--color-keys);
   outline-offset: 2px;
 }
@@ -121,7 +111,7 @@ button:focus {
 
 /* Title */
 .header {
-  color: #3a3f58; /* Darker shade for title */
+  color: #2A2E40; /* Darker shade for title */
 }
 
 /* Phrase */
@@ -132,7 +122,7 @@ button:focus {
   padding: 20px 1px 0 1px;
   margin-right: 2px;
   color: transparent; /* Hide letter until revealed */
-  background: var(--color-neutral-light); /* Neutral background color */
+  background: #D2D2D2; /* Neutral background color */
   border-radius: 5px;
 }
 
@@ -142,7 +132,7 @@ button:focus {
 
 .show {
   color: #fff; /* White text color when revealed */
-  background-color: #78CF82; /* Background color for revealed letters */
+  background-color: #4CAF50; /* Background color for revealed letters */
   font-size: 20px;
   height: 65px;
   width: 65px;
@@ -160,14 +150,14 @@ button:focus {
 }
 
 .chosen {
-  background: #5b85b7; /* Dark background for selected keys */
+  background: #2A2E40; /* Dark background for selected keys */
   border-radius: 5px;
   font-size: var(--font-size-medium); /* Medium font size */
   color: #FFFFFF;
 }
 
 .wrong {
-  background: #D94545; /* Red background color for incorrect guesses */
+  background: #B23535; /* Red background color for incorrect guesses */
   color: #FFFFFF;
 }
 
@@ -209,7 +199,7 @@ button:focus {
 
 /* Start state styling */
 .start {
-  background-color: #3a3f58; /* Dark background for start screen */
+  background-color: #2A2E40; /* Dark background for start screen */
 }
 
 .start a {
@@ -218,20 +208,12 @@ button:focus {
 
 /* Win state styling */
 .win {
-  background-color: var(--color-win); /* Green background for win screen */
-}
-
-.win a {
-  color: var(--color-win); /* Matching link color for win state */
+  background-color: #4CAF50; /* Green background for win screen */
 }
 
 /* Lose state styling */
 .lose {
-  background-color: #bb3838; /* Red background for lose screen */
-}
-
-.lose a {
-  color: var(--color-lose); /* Red link color for lose state */
+  background-color: #B23535; /* Red background for lose screen */
 }
 
 /* Media Queries for Responsiveness */

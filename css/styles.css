@@ -5,6 +5,9 @@
 :root {
   /* Colors */
   --color-keys: #37474F;
+  --color-purewhite: #FFFFFF;
+  --color-green: #4CAF50;
+  --color-red: #B23535;
 
   /* Fonts */
   --font-size-medium: 20px;
@@ -73,9 +76,11 @@ input:focus {
 
 /* Enhanced focus for buttons with transition */
 button:focus {
-  background-color: var(--color-keys); /* Change background color on focus */
-  color: #FFFFFF; /* Ensure text remains readable */
+  background-color: #2A2E40; /* Change background color on focus */
+  color: var(--color-purewhite); /* Ensure text remains readable */
   box-shadow: 0 0 0 3px rgba(120, 207, 130, 0.6); /* Add a soft glow around buttons */
+  font-size: 2rem;
+  font-weight: 900;
 }
 
 #btn__reset {
@@ -95,7 +100,7 @@ button:focus {
 
 /* Focus styles for letters on the keyboard */
 .letter:focus {
-  background-color: #4CAF50; /* Highlight the letter in focus */
+  background-color: var(--color-green); /* Highlight the letter in focus */
   outline: 3px solid var(--color-keys);
   outline-offset: 2px;
 }
@@ -131,8 +136,8 @@ button:focus {
 }
 
 .show {
-  color: #fff; /* White text color when revealed */
-  background-color: #4CAF50; /* Background color for revealed letters */
+  color: var(--color-purewhite); /* White text color when revealed */
+  background-color: var(--color-green); /* Background color for revealed letters */
   font-size: 20px;
   height: 65px;
   width: 65px;
@@ -153,12 +158,12 @@ button:focus {
   background: #2A2E40; /* Dark background for selected keys */
   border-radius: 5px;
   font-size: var(--font-size-medium); /* Medium font size */
-  color: #FFFFFF;
+  color: var(--color-purewhite);
 }
 
 .wrong {
-  background: #B23535; /* Red background color for incorrect guesses */
-  color: #FFFFFF;
+  background: var(--color-red); /* Red background color for incorrect guesses */
+  color: var(--color-purewhite);
 }
 
 /* Reset button styling */
@@ -184,7 +189,7 @@ button:focus {
   display: flex;
   flex-direction: column;
   position: fixed; /* Fixed position covering the entire viewport */
-  color: #FFFFFF;
+  color: var(--color-purewhite);
   justify-content: center; /* Center content vertically */
   top: 0;
   bottom: 0;
@@ -194,7 +199,7 @@ button:focus {
 }
 
 .title {
-  color: #FFF;
+  color: var(--color-purewhite);
 }
 
 /* Start state styling */
@@ -203,17 +208,17 @@ button:focus {
 }
 
 .start a {
-  color: #fff; /* White link on start screen */
+  color: var(--color-purewhite); /* White link on start screen */
 }
 
 /* Win state styling */
 .win {
-  background-color: #4CAF50; /* Green background for win screen */
+  background-color: var(--color-green); /* Green background for win screen */
 }
 
 /* Lose state styling */
 .lose {
-  background-color: #B23535; /* Red background for lose screen */
+  background-color: var(--color-red); /* Red background for lose screen */
 }
 
 /* Media Queries for Responsiveness */

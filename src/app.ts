@@ -106,8 +106,12 @@ class App {
      * Handles Enter key press to start game
      */
     private handleEnterKey(e: KeyboardEvent): void {
+        // Check if the pressed key is the Enter key (keyCode 13)
         if (e.key === 'Enter') {
-            this.btnReset.click(); // Trigger the Start Game button on Enter key press
+            // Check if the "Start Game" button is focussed
+            if (document.activeElement === this.btnReset) {
+                this.resetGame(); // Only trigger start game if the "Start Game" button is focused
+            }
         }
     }
 }
